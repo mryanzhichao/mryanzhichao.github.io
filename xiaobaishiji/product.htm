@@ -1,0 +1,251 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="decorator" content="product" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>小白世纪－产品介绍</title>
+
+<!--[if IE 7]><link rel="stylesheet" type="text/css" href="login.htm" tppabs="http://www.xiaobaishiji.com/css/lib/fontello-ie7.min.css?1426762594" /><![endif]-->
+
+<link rel="stylesheet" type="text/css" href="resources/2.0/portal/style/style.css"/>
+<script type="text/javascript" src="resources/2.0/portal/script/jquery.1.11.3.min.js"></script>
+<style>
+	body{height:100%;}
+	 .line_bottom{border-top:1px solid #eeeeee}
+</style>
+<body>
+	<input type="hidden" id="columnNo" column="top_2" />
+	<!--header-->
+	
+
+
+
+
+
+
+<script type="text/javascript">
+	var ADMS = {
+		ctx: '',
+		userId: '',
+		userRealName: ''
+	};
+</script>
+<div class="top">
+    <div class="wrap">
+        <div class="top-logo" onclick='window.open("index.htm","_parent")'></div>
+        <div class="top-menu">
+            <ul id="top_menu_ul">
+                <li id="top_menu_1"><a target="_parent" href="index.htm">首页</a></li>
+                <li id="top_menu_2" active><a target="_parent" href="product.htm">产品介绍</a></li>
+                <li id="top_menu_5"><a target="_parent" href="news.htm">新闻动态</a></li>
+                <li id="top_menu_4" class="login log-reg">
+                	
+                	
+	                <a target="_parent" href="login.htm">登录</a>
+                	
+	            </li>
+                <!-- 
+                <li id="top_menu_0" class="register log-reg"><a href="javascript:;">注册</a></li>
+                 -->
+            </ul>
+        </div>
+        <div class="line">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-list">
+            <li><a target="_parent" href="index.htm">首页</a></li>
+            <li><a target="_parent" href="product.htm">产品介绍</a></li>
+            <li><a target="_parent" href="news.htm">新闻动态</a></li>
+        </ul>
+    </div>
+</div>
+
+	<script type="text/javascript">
+	    $(function() {
+	        /**
+	         * menu效果
+	         */
+	        var arr = $("#columnNo").attr("column") && $("#columnNo").attr("column").split('_');
+	        arr = arr || [];
+	        $('#top_menu_ul').children('li').removeAttr("active");
+	        $("#top_menu_" + arr[1]).attr('active', '');
+	    });
+	</script>
+	<!--header end-->
+	<!--banner-->
+	<div id="banner">
+	    <img src="resources/2.0/portal/img/1.jpg" alt="">
+	</div>
+	<!--banner end-->	
+	<!--content-->
+	<div class="content">
+	    <div id="experience">
+	        <div class="title">
+	            <p>点击一个场景，开始体验！</p>
+	        </div>
+	        <div class="items">
+	            <ul class="clear">
+	                <li><img src="resources/2.0/portal/img/cj/cj1.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj2.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj3.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj4.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj5.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj6.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj7.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj8.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj9.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj10.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj11.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj12.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj13.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj14.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj15.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj16.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj17.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj18.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj19.jpg" alt=""></li>
+	                <li><img src="resources/2.0/portal/img/cj/cj20.jpg" alt=""></li>
+	
+	            </ul>
+	        </div>
+	    </div>
+	
+	    <div id="fileItem" class="clear">
+	        <div class="title">
+	            <p>请上传测试图片</p>
+	        </div>
+	        <div class="fileUpload">
+	            <form id="uploadFile" action="" accept-charset="utf-8">
+	                <div class="upload_box">
+	                    <input type="text" id="file_input" readonly placeholder="请上传jpg,jpeg,png格式的图片，大小要小于3M">
+	                    <input type="button" value="＋选择图片" class="file_btn"  onclick="document.getElementById('file').click()">
+	                    <input type="file" id="file" name="file"  onchange="document.getElementById('file_input').value=this.value;filePrevImg(this);">
+	                    <input type="button" class="btn_start"  value="开始测试">
+	                </div>
+	            </form>
+	        </div>
+	        <div id="output_area">
+	            <div class="items">
+	                <ul class="clear">
+	
+	                </ul>
+	            </div>
+	        </div>
+	        <div id="loader_parent" style="display: none;">
+            <div id="loader"></div>
+        </div>
+	    </div>
+	</div>
+	<!--content end-->	
+	<!--bottom-->
+	<div class="line_bottom">
+		
+
+
+
+
+
+
+
+<!--bottom-->
+<div class="bottom clear">
+    <ul class="fl">
+        <li class="bottom_img">
+            <img src="resources/2.0/portal/img/footer01.png" alt="">
+        </li>
+        <li class="bold"><a href="index.htm">小白世纪</a></li>
+        <li><a href="contact.htm">联系我们</a></li>
+        <li><a href="about.htm">关于我们</a></li>
+        <li><a href="news.htm">新闻动态</a></li>
+    </ul>
+    <ul class="fl">
+        <li class="bottom_img">
+            <img src="resources/2.0/portal/img/footer02.png" alt="">
+        </li>
+        <li class="bold"><a href="#">客户服务</a></li>
+        <li><a href="#">使用条款</a></li>
+        <li><a href="#">隐私政策</a></li>
+        <li><a href="#">帮助中心</a></li>
+    </ul>
+    <ul class="fl">
+        <li class="bottom_img">
+            <img src="resources/2.0/portal/img/footer03.png" alt="">
+        </li>
+        <li class="bold"><a href="#">商务合作</a></li>
+        <li><a href="#">渠道合作</a></li>
+        <li><a href="#">媒体合作</a></li>
+    </ul>
+    <ul class="fl">
+        <li class="bottom_img">
+            <img src="resources/2.0/portal/img/footer04.png" alt="">
+        </li>
+        <li class="bold"><a href="#">关注我们</a></li>
+        <li><a href="#">新浪微博</a></li>
+        <li><a href="#">官方微信</a></li>
+        <li><a href="#">官方贴吧</a></li>
+    </ul>
+</div>
+<div class="copyright">Copyright 2015 xiaobaishiji.com All Rights Reserved.  京ICP备11022410 </div>
+<!--bottom end-->
+	</div>
+	<!--bottom end-->
+	<!--alert_mark-->
+	<div class="alert_mark" style="display:none;">
+	    <div class="alert_box">
+	        <div class="close"><b></b></div>
+	        <div class="alert_content">
+	            <ul>
+	                <li class="l1 fl"><img src="" alt=""></li>
+	                <li class="l2 fl">
+	                    <p id="sr_p1"></p>
+	                    <p id="sr_p2"></p>
+	                </li>
+	                <li class="l3 fl">
+	                    <div class="phone_" >
+	                        <div class="phone_s" style="background-image: url('/resources/2.0/portal/img/Shopping-cart-icon.png');"></div>
+	                        <span>............   点击前</span>
+	                    </div>
+	                </li>
+	                <li class="l4 fl ">
+	                    <div class="phone_" >
+	                        <div class="phone_s" style="background-image: url('/resources/2.0/portal/img/Expand-style.png');"></div>
+	                        <span>点击后   ............</span>
+	                    </div>
+	                </li>
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+	<!--alert_mark end-->
+</div>
+</body>
+<script type="text/javascript" src="resources/js/common-util.js"></script>
+<script type="text/javascript" src="resources/js/layer-v2.0/layer/layer.js"></script>
+<script type="text/javascript" src="resources/js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="resources/2.0/portal/script/public.js"></script>
+<script type="text/javascript" src="resources/2.0/portal/script/intro.js"></script>
+<script type="text/javascript" src="resources/2.0/portal/script/drop.js" ></script>
+<script type="text/javascript" src="resources/2.0/portal/script/fakeLoader.js" ></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#loader").fakeLoader({
+        timeToHide:5000,
+        bgColor:"ffffff",
+        spinner:"spinner7"
+    });
+    if(window.innerWidth<768){
+    	$(window).scroll(function(){
+			$('.alert_mark').css('top', $(document).scrollTop());
+			$('#loader_parent').css('top', $(document).scrollTop());
+		});
+    }
+});
+</script>
+</html>

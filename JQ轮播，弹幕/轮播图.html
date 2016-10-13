@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#wrap{
+			position: relative;
+			margin: 100px auto;
+			border: 1px solid black;
+			overflow: hidden;
+			width: 500px;
+			height: 400px;
+		}
+		#container{
+			width: 9999999px;
+			height: 600px;
+			position: absolute;
+		}
+		#container img {
+			width: 500px;
+			height: 400px;
+			/*position: absolute;*/
+			float: left;
+		}
+		#ulpage{
+			position: absolute;
+			left:160px;
+			bottom:10px;
+			list-style: none;  
+		}
+		#ulpage li{
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			float: left;
+			background: #ccc;
+			text-align: center;
+			line-height: 18px;
+			margin-left:10px; 
+		}
+		#leftbtn,#rightbtn{
+			width: 50px;
+			height: 50px;
+			background: #ccc;
+			position: absolute;
+			opacity: 0.5;
+			text-align: center;
+			line-height: 50px;
+			font-size: 20px;
+			top: 175px;
+			display: none;
+		}
+		#leftbtn{
+			left: 0;
+		}
+		#rightbtn{
+			right: 0;
+		}
+		#ulpage .pages{
+			background: orangered;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="container">
+			<img src="img/1.jpg" alt="">
+			<img src="img/2.jpg" alt="">
+			<img src="img/4.jpg" alt="">
+			<img src="img/7.jpg" alt="">
+			<img src="img/8.jpg" alt="">
+		</div>
+		<ul id="ulpage">
+			<li class="pages">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<div id="leftbtn"><</div>
+		<div id="rightbtn">></div>
+	</div>
+</body>
+ <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+	<script>
+	var num = 0;
+	var timer = null;
+	var indexe = 0;
+	$.fn.extend({
+		autoPlay:function(){
+			timer = setInterval(function(){
+				indexe ++;
+				if(indexe > 4){
+					indexe = 0;
+				}
+				$('#container').css({
+					left:- $('img').width()*indexe
+				})
+				$('#ulpage li').eq(indexe).css('background','orangered').siblings().css('background','#ccc')
+			},3000)
+		},
+		btnAppear:function(){
+			$('#wrap').on('mouseover',function(){
+				$('#leftbtn,#rightbtn').css({
+					display:'block'
+				}),
+				clearInterval(timer)
+			})
+		},
+		btnDisappear:function(){
+			$('#wrap').on('mouseout',function(){
+				$('#leftbtn,#rightbtn').css({
+					display:'none'
+				}),
+				$('p').autoPlay();
+			})	
+		},
+		moveleft:function(){
+			$('#leftbtn').on('click',function(){
+				indexe--;
+				if (indexe<0) {
+					indexe = 4;
+				};
+				$('#container').css({
+					left:- $('img').width()*indexe
+				})
+				$('#ulpage li').eq(indexe).css('background','orangered').siblings().css('background','#ccc')
+			})
+		},
+		moveright:function(){
+			$('#rightbtn').on('click',function(){
+				indexe++;
+				if (indexe > 4) {
+					indexe = 0;
+				};
+				$('#container').css({
+					left:- $('img').width()*indexe
+				})
+				$('#ulpage li').eq(indexe).css('background','orangered').siblings().css('background','#ccc')
+			})
+		},
+		page:function(){
+			$('#ulpage li').on('click',function(){
+					 indexe = $(this).index();
+					$('#container').css({
+						left:- $('img').width()*indexe
+				});
+				$('#ulpage li').eq(indexe).css('background','orangered').siblings().css('background','#ccc')	
+				})
+			}
+	})
+	$('p').autoPlay();
+	$('p').btnAppear();
+	$('p').btnDisappear();
+	$('p').moveleft();
+	$('p').moveright();
+	$('p').page();
+	</script>
+</html>

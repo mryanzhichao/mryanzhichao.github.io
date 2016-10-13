@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播</title>
+	<style>
+		body{margin: 0;padding: 0;}
+		.testbox{
+			width: 100%;
+			height: 100%;
+		}
+		#box{
+			width: 100%;
+			height: 502px;
+			position: relative;
+			/*position: absolute;*/
+		}
+		#container{
+			width: 100%;
+			height: 502px;
+			position: absolute;
+		}
+		#container img{
+			width: 100%;
+			height: 502px;
+			position: absolute;
+			transition: all 1s; 
+			opacity: 1;
+		}
+		#left_btn,#right_btn{
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			line-height: 58px;
+			font-size: 50px;
+			top: 50%;
+			background: black;
+			opacity: 0.6;
+			color:white; 
+			display: none;
+		}
+		#left_btn{
+			left: 0;
+		}
+		#right_btn{
+			right: 0;
+		}
+		ul{
+			position: absolute;
+			width: 15%;
+			height: 10%;
+			bottom: 0;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+			left: 42.5%;
+			/*left: 50%;*/
+		}
+		ul li{
+			margin-left: 10px;
+			width: 15px;
+			height: 15px;
+			line-height: 15px;
+			border-radius: 50%;
+			border:1px solid black;
+			background: black;
+			float: left;
+			margin-left: 14%;
+		}
+		.select{
+			background: white;
+		}
+		#nav{
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="testbox">
+	<div id="box">
+		<div id="container">
+			<img src="img/1.jpg" alt="">
+			<img src="img/2.jpg" alt="">
+			<img src="img/4.jpg" alt="">
+		</div>
+
+		<div id="left_btn"><</div>
+		<div id="right_btn">></div>
+		<ul id="pages">
+			<li class="select page"></li>
+			<li class="page"></li>
+			<li class="page"></li>
+		</ul>
+	</div>
+	<div id="nav">
+		内容
+	</div>
+	</div>
+</body>
+	<script>
+		var box = document.getElementById('box');
+		var container = document.getElementById('container');
+		var imgs = document.getElementsByTagName('img');
+		var left_btn = document.getElementById('left_btn');
+		var right_btn = document.getElementById('right_btn');
+		var ul = document.getElementsByTagName('ul')[0];
+		var lis = ul.getElementsByTagName('li');
+		var timer = null;
+		var num =  0;
+		function autoplay () {
+			timer = setInterval(function(){
+				num++;
+				if (num>2) {
+					num = 0;
+				};
+				for (var i = 0; i < imgs.length; i++) {
+					imgs[i].style.opacity = 0;
+					lis[i].style.background = 'black';
+				};
+				imgs[num].style.opacity = 1;
+				lis[num].style.background = 'white';
+			},2000);
+		}
+		autoplay();
+		function appearance(){
+			box.onmouseover = function(){
+				clearInterval(timer);
+				left_btn.style.display = 'block';
+				right_btn.style.display = 'block';
+			}
+			box.onmouseout = function(){
+				left_btn.style.display = 'none';
+				right_btn.style.display = 'none';
+				autoplay();
+			}
+		}
+		appearance();
+		function leftBtn(){
+			left_btn.onclick = function(){
+				num--;
+				if (num<0) {
+					num=2
+				};
+				for (var i = 0; i < imgs.length; i++) {
+					imgs[i].style.opacity = 0;
+					lis[i].style.background = 'black';
+				};
+				imgs[num].style.opacity = 1;
+				lis[num].style.background = 'white';
+			}
+		}
+		leftBtn();
+		function rightBtn(){
+			right_btn.onclick = function(){
+				num++;
+				if (num>2) {
+					num=0
+				};
+				for (var i = 0; i < imgs.length; i++) {
+					imgs[i].style.opacity = 0;
+					lis[i].style.background = 'black';
+				};
+				imgs[num].style.opacity = 1;
+				lis[num].style.background = 'white';
+			}
+		}
+		rightBtn();
+		function pageBtn(){
+			for (var i = 0; i < lis.length; i++) {
+				lis[i].index = i;
+				lis[i].onclick = function(){
+					clearInterval(timer);
+				for (var i = 0; i < imgs.length; i++) {
+					imgs[i].style.opacity = 0;
+					lis[i].style.background = 'black';
+				};
+				imgs[this.index].style.opacity = 1;
+				lis[this.index].style.background = 'white';
+				num = this.index;
+				}
+				autoplay();
+			};
+		}
+		pageBtn();
+	</script>
+</html>

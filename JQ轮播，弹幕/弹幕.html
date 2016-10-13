@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		#wrap{
+			width: 500px;
+			height: 500px;
+			border: 1px solid black;
+			position: relative;
+			margin: 100px auto;
+			background: pink;
+			overflow: hidden;
+		}
+		#text{
+			position: absolute;
+			bottom: 10px;
+			width: 200px;
+			height: 30px;
+			left: 150px;
+		}
+		#btn{
+			position: absolute;
+			right: 98px;
+			bottom: 17px;
+			font-size: 20px;
+		}
+		#wrap #uls{
+			position: absolute;
+			list-style: none;
+			left: 500px;
+		}
+		#wrap #uls li{
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<input type="text" value="" id="text">
+		<input type="button" value="提交" id="btn">
+		<ul id="uls"></ul>
+	</div>
+</body>
+ <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+	<script>
+	$.fn.extend({
+		_random:function(min,max){
+			return parseInt(Math.random()*(max-min+1)+min);
+		},
+		_randcolor:function(){
+			var num1 = parseInt(Math.random()*256);
+			var num2 = parseInt(Math.random()*256);
+			var num3 = parseInt(Math.random()*256);
+			return 'rgb('+num1+','+num2+','+num3+')';
+		},
+		_speed:function(){
+			 var speed = parseInt(Math.random()*1001+5000);
+			 return speed;
+		}
+	})
+	
+		$('#btn').on('click',function(){
+			for(var i = 0 ;i<10;i++){
+			var _val = $('#text').val();
+			var newLi = $('<li>'+_val+'</li>');
+			$('#uls').append(newLi);
+			$('#uls li:last').css({
+				color:$('p')._randcolor(),
+				top:$('p')._random(0,400),
+				left:$('p')._random(500,800)
+			})
+
+			//$('#text').val('');
+			$('#uls li:last').animate({left:-500},$('p')._speed(),function(){
+				$('uls li').remove();
+			});
+			}
+		})
+	
+	</script>
+</html>

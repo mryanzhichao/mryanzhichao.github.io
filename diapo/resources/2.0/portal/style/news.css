@@ -1,0 +1,124 @@
+@media screen and (max-device-width: 768px){
+    .news_content .content .news_content_title {
+        text-align: center;
+        margin-top: 3rem;
+        font-size: 24px;
+        color: #f1f1f1;
+        margin-bottom: 1rem;
+    }
+    .news_item_parent {
+        width: 100%;
+        padding-top: 1rem;
+
+    }
+    .news_item .l1 {
+        width: 90%;
+        height: 150px;
+        text-align: center;
+        float: none;
+        margin: 0 auto;
+    }
+    .news_item .l1 img{
+        width: 100%;
+        height: 100%;
+    }
+    .news_item .l2 {
+        width: 100%;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #666;
+        line-height: 2rem;
+    }
+    .news_item .l2 a {
+        color: #666;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        overflow: hidden;
+        height: 2rem;
+    }
+    .news_item .l3 {
+        width: 100%;
+        text-align: center;
+        font-size: 0.7rem;
+        color: #cccccc;
+        margin-bottom: 6px;
+    }
+
+    .news_item .l4 {
+        width: 80%;
+        margin-left: 10%;
+        display: block;
+        font-size: 14px;
+        color: #999999;
+        line-height: 22px;
+    }
+    .news_item .l4 a {
+        color: #666;
+    }
+
+}
+@media screen and (min-device-width: 1024px) {
+    .news_content .content .news_content_title {
+        text-align: center;
+        margin-top: 100px;
+        font-size: 24px;
+        color: #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    .news_item_parent {
+        width: 100%;
+        height: 200px;
+        padding-top: 25px;
+        border-top: 1px solid #f1f1f1;
+    }
+
+    .news_item_parent:hover {
+        background-color: #fbfbfb;
+    }
+
+    .news_item .l1{
+        width: 150px;
+        height: 150px;
+        margin-left:20px;
+    }
+    .news_item .l1 img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .news_item .l2, .news_item .l3, .news_item .l4 {
+        width: 800px;
+        margin-left: 40px;
+    }
+
+    .news_item .l2 {
+        font-size: 18px;
+        color: #666;
+        line-height: 40px;
+    }
+
+    .news_item .l2 a {
+        color: #666;
+    }
+
+    .news_item .l2 a:hover {
+        color: #cccccc;
+    }
+
+    .news_item .l3 {
+        font-size: 14px;
+        color: #cccccc;
+        margin-bottom: 6px;
+    }
+
+    .news_item .l4 {
+        font-size: 14px;
+        color: #999999;
+        line-height: 22px;
+    }
+    .news_item .l4 a {
+        color: #666;
+    }
+}

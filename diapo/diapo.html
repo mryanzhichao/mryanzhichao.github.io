@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="resources/2.0/portal/style/diapo.css"/>
+	<link rel="stylesheet" type="text/css" href="resources/2.0/portal/style/index.css"/>
+	<link rel="stylesheet" type="text/css" href="resources/2.0/portal/style/style.css"/>
+	
+	<script type="text/javascript" src="resources/2.0/portal/script/jquery-1.7.2.min.js"></script>
+	 <script type='text/javascript' src="resources/2.0/portal/script/jquery.easing.1.3.js"></script>
+	<!-- // <script type='text/javascript' src="resources/2.0/portal/script/jquery.hoverIntent.minified.js"></script> -->
+	<script type='text/javascript' src="resources/2.0/portal/script/diapo.js"></script>
+
+
+</head>
+<header>
+	<!--header-->
+	<script>
+		$(function(){
+			$('.pix_diapo').diapo();
+		});
+	</script>
+	<script type="text/javascript">
+    $(function() {
+        /**
+         * menu效果
+         */
+        var arr = $("#columnNo").attr("column") && $("#columnNo").attr("column").split('_');
+        arr = arr || [];
+        $('#top_menu_ul').children('li').removeAttr("active");
+        $("#top_menu_" + arr[1]).attr('active', '');
+    });
+</script>
+
+</header>
+<body>
+	<div class="top">
+    <div class="wrap">
+        <div class="top-logo" onclick='window.open("diapo.html","_parent")'></div>
+        <div class="top-menu">
+            <ul id="top_menu_ul">
+                <li id="top_menu_1"><a target="_parent" href="diapo.html">首页</a></li>
+                <li id="top_menu_2" active><a target="_parent" href="diapo.html">产品介绍</a></li>
+                <li id="top_menu_5"><a target="_parent" href="diapo.html">新闻动态</a></li>
+                <li id="top_menu_4" class="login log-reg">
+
+
+	                <a target="_parent" href="diapo.html">登录</a>
+
+	            </li>
+                <!--
+                <li id="top_menu_0" class="register log-reg"><a href="javascript:;">注册</a></li>
+                 -->
+            </ul>
+        </div>
+        <div class="line">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-list">
+            <li><a target="_parent" href="diapo.htm">首页</a></li>
+            <li><a target="_parent" href="#">产品介绍</a></li>
+            <li><a target="_parent" href="#">新闻动态</a></li>
+        </ul>
+    </div>
+</div>
+
+		<div id="container">
+		<div class="section active" id="section0">
+			<div class="pix_diapo">
+				<div class="banner0" str="核心技术" data-thumb="resources/2.0/portal/img/banner0.jpg">
+					<img class="bg" src="resources/2.0/portal/img/banner0.jpg" alt="">
+					<div class="caption elemHover fromLeft leftBox">
+						<div class="d1 left"></div>
+						<div class="d2 left">CBIR<span>/</span>SIFT<span>/</span>BOW<span>/</span>CNN</div>
+					</div>
+					<div class="caption elemHover fromRight rightBox">
+						<div class="rightBox_top"></div>
+						<div class="rightBox_middle clear">
+							<img style='cursor:pointer;' onclick='window.open("product.htm","_parent")' class="left" src="resources/2.0/portal/img/Video-search.png" alt="">
+							<div class="left rightBox_font">
+								<div class="znspss"><span class="fk"></span>智能视频搜索</div>
+								<div>物件识别·场景识别</div>
+							</div>
+						</div>
+						<div class="rightBox_bottom"></div>
+					</div>
+				</div>
+				<div class="banner1" str="营销平台" data-thumb="resources/2.0/portal/img/banner1.jpg">
+					<img class="bg" src="resources/2.0/portal/img/banner1.jpg" alt="">
+					<div class=" elemHover fromTop banner1_top">
+						<div class="banner1_title">
+							<ul>
+								<li class="l1">加米智能广告 <span style="font-weight: bold">互动营销平台</span></li>
+								<li class="l2">从定制场景训练到场景匹配、广告投放、流量监控。提供全方位的完整闭环服务。</li>
+							</ul>
+						</div>
+					</div>
+					<div class="elemHover fromBottom banner1_bottom">
+						<ul>
+							<li class="l1 left">
+								<img src="resources/2.0/portal/img/Video-content-search.png" alt="">
+								<br>视频内容搜索
+							</li>
+							<li class="l2 left">
+								<img src="resources/2.0/portal/img/SITUATION-icon2.png" alt="">
+								<br>场景匹配
+							</li>
+							<li class="l3 left">
+								<img src="resources/2.0/portal/img/Advertising-delivery.png" alt="">
+								<br>广告投放
+							</li>
+							<li class="l5 left">
+								<img src="resources/2.0/portal/img/Flow-statistics.png" alt="">
+								<br>流量统计
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="banner2" str="定制服务" data-thumb="resources/2.0/portal/img/banner2.jpg">
+					<img class="bg" src="resources/2.0/portal/img/banner2.jpg" alt="">
+					<div class=" elemHover fadeIn banner2_top">
+						<div class="banner2_top_title">一对一定制化服务</div>
+					</div>
+					<div class=" elemHover fadeIn banner2_bottom">
+						<div class="banner2_bottom_font1">
+							<ul>
+								<li><span>内容审核</span>AUDITING</li>
+								<li class="phone_none">对游戏直播、真人秀内容实时审核。</li>
+							</ul>
+						</div>
+						<div class="banner2_bottom_font2">
+							<ul>
+								<li>SITUATION<span>情境广告</span></li>
+								<li class="phone_none">精准投放，边看边买。</li>
+							</ul>
+						</div>
+						<div class="banner2_bottom_font3">
+							<ul>
+								<li><span>版权监控</span>NO COPY RIGHT!</li>
+								<li class="phone_none">全网监测，及时预警。</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+</body>
+</html>

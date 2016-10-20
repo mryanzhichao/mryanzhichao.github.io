@@ -1,0 +1,28 @@
+
+<div>
+	<h2>你的购物车</h2>
+	<p class="alert alert-warning" ng-show="cars.length == 0">这里没有商品<a href="#">点击这里返回购物</a></p>
+
+	<table class="table table-striped" ng-hide="cars.length == 0">
+		<thead>
+			<tr class="row">
+				<th class="col-xs-5">商品名称</th>
+				<th class="col-xs-1 text-center">单价</th>
+				<th class="col-xs-1 text-center">数量</th>
+				<th class="col-xs-2 text-center">小计</th>
+				<th class="col-xs-3 text-center">删除</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="row" ng-repeat="shop in cars">
+				<td class="col-md-5">{{shop.product.name}}</td>
+				<td class="col-md-1 text-center">{{shop.product.price|currency:"￥"}}</td>
+				<td class="col-md-1 text-center">{{shop.count}}</td>
+				<td class="col-md-2 text-center">{{shop.count * shop.product.price|currency:"￥"}}</td>
+				<td class="col-md-3 text-center">
+					<button class="btn btn-danger" ng-click="isDelete(shop)">删除</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

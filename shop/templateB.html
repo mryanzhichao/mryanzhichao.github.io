@@ -1,0 +1,27 @@
+<!-- 定制栅格布局 -->
+	<div class="row panel panel-default">
+		<div class="col-md-3">
+			<!-- button.btn.btn-default.btn-block btn-lg*5 -->
+			<button ng-click="getProductsOfCategory('全部')" class="btn btn-default btn-block btn-lg" ng-class="getClassOfChoosedCategory('全部')">全部</button>
+			<button ng-click="getProductsOfCategory(p)" ng-repeat="p in products|unique:'category'" class="btn btn-default btn-block btn-lg" ng-class="getClassOfChoosedCategory(p)">{{p}}</button>
+			<!-- ng-class=" '' " -->
+
+		</div>
+		<div class="col-md-9">
+
+			<div>
+				<div class="well" ng-repeat="product in perPageProducts">
+					<h3>{{product.name}}<span class="pull-right label label-primary">{{product.price|currency:'￥'}}</span></h3>
+					<button ng-click="addToCar(product)" class="pull-right btn btn-success">加入购物车</button>
+					<span class="lead">{{product.description}}</span>
+				</div>
+
+				<div class="pull-right btn-group">
+					<!-- button.btn.btn-default{$}*4 -->
+					<button ng-click="getProductsPerPage(page)" class="btn btn-default" ng-repeat="page in pages" ng-class="getClassOfChoosedPage(page)">{{page}}</button>
+
+				</div>
+
+			</div>
+
+		</div>

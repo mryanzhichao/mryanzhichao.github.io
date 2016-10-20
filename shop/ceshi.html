@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="han">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body class="container-fluid">
+
+	<hello-world></hello-world>
+	<han-Guang></han-Guang>
+
+</body>
+	<script src="https://cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+	<script>
+	var app=angular.module("han",[]);
+	app.directive("helloWorld",function(){
+		return {
+			template:"<div role='navigation' class='navbar navbar-inverse'><a href='#' class='navbr navbar-brand'>导航</a><div class='navbar-text pull-right'>你的购物车0件,总计￥0.00<a href='#' class='btn btn-default btn-sm'>查看</a></div></div>"
+		};
+	});
+
+	app.directive('hanGuang',function(){
+		return{
+			template:"<div class='row panel panel-default'><div class='col-md-3'><button class='btn btn-default btn-block btn-lg btn-primary'>全部</button><button class='btn btn-default btn-block btn-lg'>篮球</button><button class='btn btn-default btn-block btn-lg'>足球</button><button class='btn btn-default btn-block btn-lg'>乒乓球拍</button><button class='btn btn-default btn-block btn-lg'>网球拍</button></div><div class='col-md-9'><div><div class='well'><h3>乔丹篮球<span class='pull-right label label-primary'><span>￥119.00</span></h3><button class='pull-right btn btn-success'>加入购物车</button><span class='lead'>乔丹篮球水泥地耐磨防滑室内外通用七号篮球特价正品学生比赛用球。竞赛用篮球。</span></div><div class='well'><h3>乔丹篮球<span class='pull-right label label-primary'>￥119.00</span></h3><button class='pull-right btn btn-success'>加入购物车</button><span class='lead'>乔丹篮球水泥地耐磨防滑室内外通用七号篮球特价正品学生比赛用球。竞赛用篮球。</span></div><div class='well'><h3>乔丹篮球<span class='pull-right label label-primary'>￥119.00</span></h3><button class='pull-right btn btn-success'>加入购物车</button><span class='lead'>乔丹篮球水泥地耐磨防滑室内外通用七号篮球特价正品学生比赛用球。竞赛用篮球。</span></div><div class='pull-right btn-group'><button class='btn btn-default'>1</button><button class='btn btn-default'>2</button><button class='btn btn-default'>3</button><button class='btn btn-default'>4</button></div></div></div>"
+		}
+	})
+
+
+	</script>
+</html>

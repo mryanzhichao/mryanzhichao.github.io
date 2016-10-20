@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"ng-app="shop">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body class="container-fluid" ng-controller="mainCtrl">
+	<!-- <span class="glyphicon glyphicon-heart"></span> -->
+	<!-- <a href="#">anchor</a> -->
+	<!-- 定制导航栏 -->
+	<nav-bar></nav-bar>
+
+	<ng-view></ng-view>
+	</div>
+</body>
+	<script src="https://cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+	<script src="https://cdn.bootcss.com/angular.js/1.5.8/angular-route.min.js"></script>
+	<script src="js/customFilter.js"></script>
+	<script src="js/app.js"></script>
+</html>
